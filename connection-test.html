@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연결 테스트</title>
+<style>
+body{font-family:system-ui,"Malgun Gothic",sans-serif;margin:20px;font-size:15px}
+#state{font-size:1.4rem;font-weight:700}
+#log{margin-top:12px;font-family:Consolas,monospace;font-size:.85rem;white-space:pre-wrap;max-height:60vh;overflow:auto;border:1px solid #ccc;padding:8px}
+</style>
+</head>
+<body>
+<p>로그인 없이 Realtime Database 연결 상태만 확인합니다. 30초 정도 두고 아래 기록을 보내 주세요.</p>
+<div id="state">확인 중…</div>
+<div id="log"></div>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+<script>
+var config={
+  apiKey:"AIzaSyCsRfX59tG6q--jxUKSR6GjLlCCxoayvgQ",
+  authDomain:"improve-board-2.firebaseapp.com",
+  databaseURL:"https://improve-board-2-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId:"improve-board-2",
+  storageBucket:"improve-board-2.firebasestorage.app",
+  messagingSenderId:"907168801391",
+  appId:"1:907168801391:web:e5d5976f95a934328b239a"
+};
+var t0=Date.now();
+function log(m){var el=document.getElementById("log");el.textContent+=((Date.now()-t0)/1000).toFixed(1)+"s  "+m+"\n"}
+try{
+  firebase.initializeApp(config);
+  var db=firebase.database();
+  db.ref(".info/connected").on("value",function(s){
+    var on=!!s.val();
+    document.getElementById("state").textContent=on?"연결됨":"연결 끊김";
+    log(on?"connected = true":"connected = false");
+  });
+  db.ref("tabs").once("value").then(function(){log("tabs 읽기 성공 (규칙 허용)")},function(e){log("tabs 읽기 실패: "+e.message)});
+}catch(e){document.getElementById("state").textContent="오류";log("초기화 오류: "+e.message)}
+</script>
+</body>
+</html>

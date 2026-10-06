@@ -34,3 +34,10 @@
   - 프로젝트: audit-improvement-measures (Realtime Database 위치: asia-southeast1)
   - FIREBASE_CONFIG에 실제 값 적용 (v4까지는 REPLACE_ME 자리표시자였음)
   - 동작하려면 Firebase 콘솔에서 Authentication(Google 로그인)과 Realtime Database 규칙(database-rules-v1.json), 승인된 도메인 설정이 되어 있어야 함
+
+## v6
+- `index-v6.html`: v5 기능 + 분류(폴더) 기능
+  - 팀 안에 관리자가 분류를 만듦 (추가, 수정, 삭제). 분류는 팀마다 따로 관리
+  - 요청 카드에서 분류를 고르면 그 분류 칸 아래로 묶여 보임. 분류가 없는 요청은 "미분류"
+  - 분류를 지우면 안의 요청은 미분류로 돌아감 (요청은 지워지지 않음)
+- `database-rules-v2.json`: `cats` 항목이 추가된 규칙. **v1 규칙을 이 파일 내용으로 바꿔 게시해야 분류가 저장됩니다.**

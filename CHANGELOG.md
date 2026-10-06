@@ -10,3 +10,9 @@
   - 전체 권한: 관리자 3개 Google 계정
   - 이력(`logs`)은 추가만 가능
 - 설정 전 `index-v1.html`의 `FIREBASE_CONFIG` 값(`REPLACE_ME`)을 새 프로젝트 값으로 바꿔야 합니다.
+
+## v2
+- `index-v2.html`: v1 기능 그대로 + 아래 변경
+  - 사진 용량 축소: 붙여넣을 때 바로 긴 변 1024px 이하, WebP(미지원 시 JPEG)로 압축, 한 장당 약 220KB 이하로 맞춤
+  - 엑셀 내보내기 버튼 추가 (전체 권한만): 현재 탭의 모든 팀 요청을 CSV로 내려받음. 양식은 추후 지정 예정 (`exportHeader`, `exportRow` 함수만 수정)
+- `database-rules-v1.json` 그대로 사용 (규칙 변경 없음)

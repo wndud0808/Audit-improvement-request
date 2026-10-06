@@ -52,3 +52,9 @@
 - 주소: https://wndud0808.github.io/Audit-improvement-request/ (업데이트해도 주소는 바뀌지 않음)
 - 새 버전(vN)을 만들 때는 `index-vN.html`을 추가하고, 같은 내용을 `index.html`에도 복사합니다.
 - 이전 버전 파일(index-v1.html ~ )은 기록용으로 그대로 둡니다.
+
+## v8
+- 새 Firebase 프로젝트(improve-board-2)로 설정 변경 (기능은 v7과 동일)
+- Realtime Database: asia-southeast1 (싱가포르)
+- 규칙: database-rules-v2.json 게시 필요
+- `index.html`도 v8과 같은 내용으로 갱신

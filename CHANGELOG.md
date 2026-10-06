@@ -58,3 +58,8 @@
 - Realtime Database: asia-southeast1 (싱가포르)
 - 규칙: database-rules-v2.json 게시 필요
 - `index.html`도 v8과 같은 내용으로 갱신
+
+## v9
+- 관리자 전용 "분류 이동" 선택 상자를 카드 제목 오른쪽에 추가 (접힌 상태에서도 바로 이동)
+- 펼친 카드 안의 중복 분류 선택은 제거
+- `index.html`도 v9와 같은 내용으로 갱신

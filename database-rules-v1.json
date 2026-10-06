@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "tabs": {
+      ".read": "auth != null && auth.token.email_verified === true",
+      ".write": "auth != null && (auth.token.email == 'wndud0808@gmail.com' || auth.token.email == 'zuglring@gmail.com' || auth.token.email == 'yccho0902@gmail.com')"
+    },
+    "items": {
+      ".read": "auth != null && auth.token.email_verified === true",
+      "$id": {
+        ".write": "auth != null && (auth.token.email == 'wndud0808@gmail.com' || auth.token.email == 'zuglring@gmail.com' || auth.token.email == 'yccho0902@gmail.com')",
+        "reply": {
+          ".write": "auth != null && auth.token.email_verified === true"
+        },
+        "rby": {
+          ".write": "auth != null && auth.token.email_verified === true"
+        },
+        "rphotos": {
+          ".write": "auth != null && auth.token.email_verified === true"
+        }
+      }
+    },
+    "logs": {
+      ".read": "auth != null && auth.token.email_verified === true",
+      "$itemId": {
+        "$logId": {
+          ".write": "!data.exists() && newData.child('by').val() === auth.token.email",
+          ".validate": "newData.hasChildren(['at', 'by', 'what'])"
+        }
+      }
+    }
+  }
+}

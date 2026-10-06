@@ -28,3 +28,9 @@
   - 사진 크게 보기: 마우스 휠로 확대/축소(커서 위치 기준), 확대 상태에서 드래그로 이동
   - 사진 클릭: 2배 확대 ↔ 원래 크기, 화면 우상단 +, −, 원래 크기, 닫기 버튼 추가
   - 배경 클릭 또는 Esc로 닫기
+
+## v5
+- `index-v5.html`: v4 기능 + Firebase 프로젝트 연결 완료
+  - 프로젝트: audit-improvement-measures (Realtime Database 위치: asia-southeast1)
+  - FIREBASE_CONFIG에 실제 값 적용 (v4까지는 REPLACE_ME 자리표시자였음)
+  - 동작하려면 Firebase 콘솔에서 Authentication(Google 로그인)과 Realtime Database 규칙(database-rules-v1.json), 승인된 도메인 설정이 되어 있어야 함

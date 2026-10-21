@@ -351,7 +351,7 @@ function normItem(id){
  var ph=state.photos[id]||{};
  return {id:id,t:r.t||"",tab:r.tab||"",team:r.team||"",st:r.st||null,memo:memo.length?memo:[""],photos:toArr(ph.photos),rphotos:toArr(ph.rphotos),phLoaded:(id in state.photos),reply:r.reply||"",rby:r.rby||"",at:r.at||0,cat:r.cat||null};
 }
-function tabList(){return Object.keys(state.tabs).map(function(id){var t=state.tabs[id]||{};return{id:id,name:t.name||"",order:t.order||0}}).sort(function(a,b){return a.order-b.order})}
+function tabList(){return Object.keys(state.tabs).map(function(id){var t=state.tabs[id]||{};return{id:id,name:t.name||"",order:t.order||0}}).sort(function(a,b){return b.order-a.order})}
 function curTabId(){
  if(state.tab&&state.tabs[state.tab])return state.tab;
  var l=tabList();return l.length?l[0].id:null;
